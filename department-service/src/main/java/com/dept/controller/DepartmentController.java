@@ -11,8 +11,8 @@ import java.util.List;
 @RestController
 @RequestMapping("departments")
 @Slf4j
-public class DepartmentController {
-
+public class DepartmentController
+{
     @Autowired
     private DepartmentService departmentService;
 
