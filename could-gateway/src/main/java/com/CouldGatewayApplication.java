@@ -11,7 +11,7 @@ public class CouldGatewayApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CouldGatewayApplication.class, args);
 
-		System.out.println("CouldGateway Application running !");
+		System.out.println("EurekaClient CloudGateway Application running !");
 	}
 
 }
