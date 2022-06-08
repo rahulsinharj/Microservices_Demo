@@ -14,22 +14,23 @@
 	<name>hystrix-dashboard</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 		<spring-cloud.version>2021.0.3</spring-cloud.version>
 	</properties>
 
-	<dependencies>			<!--   Hystrix , Eureka Client  -->
+	<dependencies>			<!--   Hystrix Dashboard , Eureka Client  -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
-		<!-- For maintenance i.e, SpringCloud CircuitBreaker - https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-hystrix -->
+		<!-- For maintenance i.e, SpringCloud CircuitBreaker - https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-netflix-hystrix-dashboard -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+			<artifactId>spring-cloud-netflix-hystrix-dashboard</artifactId>
 			<version>2.2.10.RELEASE</version>
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
