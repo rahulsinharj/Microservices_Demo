@@ -5,6 +5,8 @@ import com.user.entity.User;
 import com.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,10 +25,19 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseTemplateVO getUserWithDepartment(@PathVariable("id") Long userId)
+    public ResponseEntity<?> getUserWithDepartment(@PathVariable("id") Long userId)
     {
         log.info("Inside getUserWithDepartment of UserController");
-        return userService.getUserWithDepartment(userId);
+        ResponseTemplateVO vo = null;
+        try{
+            vo = userService.getUserWithDepartment(userId);
+            return new ResponseEntity<>(vo, HttpStatus.OK);
+        }
+        catch(Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No Used found, check again !");
+        }
+
+
     }
 
 }
