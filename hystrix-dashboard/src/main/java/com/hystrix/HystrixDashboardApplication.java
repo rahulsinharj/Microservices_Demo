@@ -14,7 +14,7 @@ public class HystrixDashboardApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HystrixDashboardApplication.class, args);
 
-		System.out.println();
+		System.out.println("HystrixDashboard Application running !");
 	}
 
 }
