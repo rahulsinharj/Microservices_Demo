@@ -29,6 +29,7 @@ public class UserService {
     {
         log.info("Inside getUserWithDepartment of UserService");
         ResponseTemplateVO vo = new ResponseTemplateVO();
+
         User user = userRepository.findById(userId).get();
         System.out.println("user : "+user);
 
