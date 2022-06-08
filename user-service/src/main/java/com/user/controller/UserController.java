@@ -30,3 +30,12 @@ public class UserController {
     }
 
 }
+
+/*
+            {   "firstName" : "Shashank",
+                "lastName" : "Kumar",
+                "email" : "shashank@gmail.com",
+                "departmentId" : 2
+            }
+
+ */
