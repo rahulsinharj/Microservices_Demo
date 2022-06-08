@@ -15,7 +15,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: USER-SERVICE
-                fallbackuri: forward:/userServiceFallBackMethod
+                fallbackuri: forward:/userServiceFallBack
         - id: DEPARTMENT-SERVICE
           uri: lb://DEPARTMENT-SERVICE
           predicates:
@@ -24,7 +24,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: DEPARTMENT-SERVICE
-                fallbackuri: forward:/departmentServiceFallBackMethod
+                fallbackuri: forward:/departmentServiceFallBack
 
 
 hystrix:
@@ -34,13 +34,6 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 4000
-
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
 
 
 eureka:
