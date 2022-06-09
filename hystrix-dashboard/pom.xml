@@ -25,7 +25,7 @@
 		</dependency>
 
 		<!-- For maintenance i.e, SpringCloud CircuitBreaker - https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-netflix-hystrix-dashboard -->
-		<!-- Hystrix Dashboard => so that we can identify VISUALLY which all services are running and which all services are not running.	-->
+		<!-- Hystrix Dashboard => so that we can VISUALLY identify which all services are running and which all services are not running.	-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-netflix-hystrix-dashboard</artifactId>
