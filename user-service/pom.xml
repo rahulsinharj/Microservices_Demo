@@ -18,10 +18,15 @@
 		<spring-cloud.version>2021.0.3</spring-cloud.version>
 	</properties>
 
-	<dependencies>			<!--  Eureka Client , Spring Web, Spring JPA, MySql, Lombok  -->
+	<dependencies>			<!--  Spring Web, Spring JPA, MySql, Lombok , Eureka Client , Cloud Config Server  -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 
 		<dependency>

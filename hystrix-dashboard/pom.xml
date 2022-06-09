@@ -18,7 +18,7 @@
 		<spring-cloud.version>2021.0.3</spring-cloud.version>
 	</properties>
 
-	<dependencies>			<!--   Hystrix Dashboard , Eureka Client  -->
+	<dependencies>			<!--   Hystrix Dashboard , Eureka Client , Cloud Config Server  -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -31,6 +31,10 @@
 			<version>2.2.10.RELEASE</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
