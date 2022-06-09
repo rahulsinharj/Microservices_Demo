@@ -34,7 +34,7 @@ public class UserService {
         System.out.println("user : "+user);
 
         // Now for getting the department object, we need to take help from RestTemplate obj
-        Department department = restTemplate.getForObject("http://localhost:9001/departments/" +user.getDepartmentId(), Department.class);
+        Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" +user.getDepartmentId(), Department.class);
         System.out.println("department : "+department);
 
         vo.setUser(user);
