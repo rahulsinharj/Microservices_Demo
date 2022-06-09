@@ -35,6 +35,16 @@ public class UserService {
 
         // Now for getting the department object, we need to take help from RestTemplate obj
         Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" +user.getDepartmentId(), Department.class);
+
+        /* Since we have registered our user-server (localhost:9002) with name as "USER-SERVICE"  inside our Eureka-Service-Registry(8761)
+                            And,  department-server (localhost:9001) with name as "DEPARTMENT-SERVICE"    inside our Eureka-Service-Registry(8761)
+            Therefore now, we no need to bother about 'HOST' and 'PORT' of any microservice,
+            Means, we can use the registered name "DEPARTMENT-SERVICE" in place of "localhost:9001"
+                http://localhost:9001/departments/    =>  http://DEPARTMENT-SERVICE/departments/
+
+         # Also, actually also the RestTemplate Bean need to annotated with @LoadBalanced, to indicated that it is client side load balanced.
+
+        */
         System.out.println("department : "+department);
 
         vo.setUser(user);

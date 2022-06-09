@@ -21,8 +21,10 @@
 	<!--  	Gateway 			=>	Taaki ye server ek load balancer ki tarah kaam kare, sare requests kewal isi Common API Gateway (localhost:9191) sehi paas hoke AAGE kahi bhi traverse kare. It provides a flexible way of routing requests based on a number of criteria.
 	  		Eureka Client 		=> 	Taaki Eureka server (localhost:8761) wale dashboard pe sare @EnableEurekaClient registered services show ho jaye.
 	  		Cloud Config Server	=>	Taaki sare common configurations (i.e, configurations of application.yml file)  bas ek hi service (localhost:9296) me likh de, aur sabhi me usko bootstrap.yml ke dwara spring-cloud-config-enabled: true karwa de
-	  		Hystrix 			=>	To implement the hystrix dashboard, so that we can identify which all services are running and which all services are not running.
 	  		Actuator 			=>	To expose operational information about the running application — health, metrics, info, dump, env, etc.
+	  		Hystrix 			=>	Hystrix is used here to implement circuit breaker while invoking underlying microservice.
+										  It is generally required to enable fault-tolerance/fallBack in the application where some underlying service is down/throwing error permanently,
+										  then we need to fall back to different path of program execution automatically
 	-->
 	<dependencies>
 
