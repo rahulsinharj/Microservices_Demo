@@ -26,8 +26,8 @@
 	  									Let say, we have some common properties which are required in each and every microservices. So now rather than hardCode those configuration is each and every microservices, better we can keep it in some central place.
 											So whoever microservices need to access that, they can get it from that central place.
 										Therefore for this => We can create one git repository, in that git repository we can write our all common properties.
-															  Then we will create 1 springboot applcication "cloud-config-server" . And that config-server will read those properties from this GIT repository.
-															  No whoever Microservices need to access those properties, they can directly talk to this "config-server".
+															  Then we will create 1 SpringBoot Application "cloud-config-server". And that "cloud-config-server" will read those properties from this GIT repository.
+															  So whoever Microservices need to access those properties, they can directly talk to this "cloud-config-server".
 										Therefore our "cloud-config-server" will act as a CENTRAL PLACE, where we can store all the common properties.
 
 	  	"Actuator" 			=>	To expose operational information about the running application — health, metrics, info, dump, env, etc.
