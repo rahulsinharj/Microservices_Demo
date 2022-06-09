@@ -8,7 +8,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github:com/rahulsinharj/eureka-config-server
+          uri: https://github.com/rahulsinharj/eureka-config-server
           clone-on-start: true
-
-
