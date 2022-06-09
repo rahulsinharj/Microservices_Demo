@@ -18,7 +18,7 @@
 		<spring-cloud.version>2021.0.3</spring-cloud.version>
 	</properties>
 
-	<!--  	Gateway 			=>	Taaki ye server ek load balancer ki tarah kaam kare, sare requests isi Common API Gateway (localhost:9191) se paas se AAGE kahi bhi traverse kare.
+	<!--  	Gateway 			=>	Taaki ye server ek load balancer ki tarah kaam kare, sare requests kewal isi Common API Gateway (localhost:9191) sehi paas hoke AAGE kahi bhi traverse kare. It provides a flexible way of routing requests based on a number of criteria.
 	  		Eureka Client 		=> 	Taaki Eureka server (localhost:8761) wale dashboard pe sare @EnableEurekaClient registered services show ho jaye.
 	  		Cloud Config Server	=>	Taaki sare common configurations (i.e, configurations of application.yml file)  bas ek hi service (localhost:9296) me likh de, aur sabhi me usko bootstrap.yml ke dwara spring-cloud-config-enabled: true karwa de
 	  		Hystrix 			=>	To implement the hystrix dashboard, so that we can identify which all services are running and which all services are not running.
