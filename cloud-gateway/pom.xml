@@ -18,7 +18,13 @@
 		<spring-cloud.version>2021.0.3</spring-cloud.version>
 	</properties>
 
-	<dependencies>			<!--  Gateway,  Eureka Client , Hystrix , Actuator ,  Cloud Config Server   -->
+	<!--  	Gateway 			=>	Taaki ye server ek load balancer ki tarah kaam kare, sare requests isi Common API Gateway (localhost:9191) se paas se AAGE kahi bhi traverse kare.
+	  		Eureka Client 		=> 	Taaki Eureka server (localhost:8761) wale dashboard pe sare @EnableEurekaClient registered services show ho jaye.
+	  		Cloud Config Server	=>	Taaki sare common configurations (i.e, configurations of application.yml file)  bas ek hi service (localhost:9296) me likh de, aur sabhi me usko bootstrap.yml ke dwara spring-cloud-config-enabled: true karwa de
+	  		Hystrix 			=>	To implement the hystrix dashboard, so that we can identify which all services are running and which all services are not running.
+	  		Actuator 			=>	To expose operational information about the running application — health, metrics, info, dump, env, etc.
+	-->
+	<dependencies>
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
