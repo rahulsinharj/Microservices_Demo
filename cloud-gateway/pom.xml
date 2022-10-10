@@ -18,10 +18,10 @@
 		<spring-cloud.version>2021.0.3</spring-cloud.version>
 	</properties>
 
-	<!-- "Gateway" 				=>	Taaki ye server ek load balancer ki tarah kaam kare, sare requests kewal isi Common API Gateway (localhost:9191) sehi paas hoke AAGE kahi bhi traverse kare. It provides a flexible way of routing requests based on a number of criteria.
-	  	"Eureka Client" 		=> 	Taaki Eureka server (localhost:8761) wale dashboard pe sare @EnableEurekaClient registered services show ho jaye.
+<!-- "Spring Cloud Gateway" =>	Taaki ye server ek load balancer ki tarah kaam kare, sare requests kewal isi Common API Gateway (localhost:9191) sehi paas hoke AAGE kahi bhi traverse kare. It provides a flexible way of routing requests based on a number of criteria.
+	 "Netflix Eureka Client" 		=> 	Taaki Eureka server (localhost:8761) wale dashboard pe sare @EnableEurekaClient registered services show ho jaye.
 
-	  	"Cloud Config Server"	=>	Taaki sare common configurations (i.e, configurations of application.yml file)  bas ek hi service (localhost:9296) me likh de, aur sabhi me usko bootstrap.yml ke dwara spring-cloud-config-enabled: true karwa de
+	 "Spring Cloud Config Server"	=>	Taaki sare common configurations (i.e, configurations of application.yml file)  bas ek hi service (localhost:9296) me likh de, aur sabhi me usko bootstrap.yml ke dwara spring-cloud-config-enabled: true karwa de
 	  									PURPOSE is => to storing and serving distributed configuration across multiple application.
 	  									Let say, we have some common properties which are required in each and every microservices. So now rather than hardCode those configuration is each and every microservices, better we can keep it in some central place.
 											So whoever microservices need to access that, they can get it from that central place.
@@ -30,11 +30,12 @@
 															  So whoever Microservices need to access those properties, they can directly talk to this "cloud-config-server".
 										Therefore our "cloud-config-server" will act as a CENTRAL PLACE, where we can store all the common properties.
 
-	  	"Actuator" 			=>	To expose operational information about the running application — health, metrics, info, dump, env, etc.
-	  	"Hystrix" 			=>	Hystrix is used here to implement circuit breaker while invoking underlying microservice.
+	"Actuator" 			=>	To expose operational information about the running application — health, metrics, info, dump, env, etc.
+	"Hystrix" 			=>	Hystrix is used here to implement circuit breaker while invoking underlying microservice.
 									  	It is generally required to enable fault-tolerance/fallBack in the application where some underlying service is down/throwing error permanently,
 										then we need to fall back to different path of program execution automatically
-	-->
+	"Resilience4j"		=> 	Providing circuit breaker support
+-->
 	<dependencies>
 
 		<dependency>
@@ -44,6 +45,11 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 
 		<!-- For maintenance i.e, SpringCloud CircuitBreaker - https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-hystrix -->
@@ -57,10 +63,6 @@
 			<artifactId>spring-cloud-starter-circuitbreaker-reactor-resilience4j</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
